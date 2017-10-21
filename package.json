@@ -13,5 +13,7 @@
     "observable": "^2.1.4"
   },
   "author": "Shannon Bradshaw",
-  "license": "0BSD"
+  "license": "0BSD",
+  "devDependencies": {
+  }
 }

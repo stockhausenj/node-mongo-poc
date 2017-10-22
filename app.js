@@ -20,13 +20,14 @@ const user = jsonContent.user;
 const pwd = jsonContent.pwd;
 const server = jsonContent.server;
 const mongoUrl = "mongodb://" + user + ":" + pwd + "@" + server + "/video";
-const views = path.join(__dirname, "views");
+
+app.set("view engine", "pug");
 
 mongoClient
   .connect(mongoUrl)
   .then(db => {
     app.get("/", function(req, res) {
-      res.sendFile(views + "/add_movie.html");
+      res.render("add_movie", { title: "Add Movie", message: "Hello there!" });
     });
     app.post("/add_movie", function(req, res) {
       let title = req.body.title;

@@ -16,13 +16,16 @@ const server = jsonContent.server;
 const mongoUrl = "mongodb://" + user + ":" + pwd + "@" + server + "/video";
 const views = path.join(__dirname, "views");
 
+function errorHandler(err) {
+  console.error(err.message);
+  console.error(err.stack);
+}
+
 mongoClient
   .connect(mongoUrl)
   .then(db => {
-    console.log("Successful connection to MongoDB!");
     app.get("/", function(req, res) {
       res.sendFile(views + "/add_movie.html");
-      //res.render('add_movie', {});
     });
     app.post("/add_movie", function(req, res) {
       let title = req.body.title;
@@ -35,6 +38,7 @@ mongoClient
           res.send("Document inserted with _id: " + r.insertedId);
         });
     });
-    app.listen(8080, (req, res) => console.log("Listening on port 8080"));
+    app.use(errorHandler);
+    app.listen(8080);
   })
   .catch(err => console.log(err));

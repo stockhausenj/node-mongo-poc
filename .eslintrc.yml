@@ -12,5 +12,5 @@ env:
 rules: 
   import/no-commonjs: "off"
   import/no-nodejs-modules: "off"
-  no-console: "warn"
+  no-console: "off"
   prettier/prettier: "error"

@@ -4,6 +4,7 @@ const express = require("express"),
   fs = require("fs"),
   path = require("path"),
   bodyParser = require("body-parser"),
+  anime = require("animejs"),
   assert = require("assert");
 
 // Create express application.
@@ -41,8 +42,8 @@ mongoClient
         });
     });
     app.use((err, req, res) => {
-      console.error(err.stack);
-      res.status(500).send("Something broke!");
+      //console.error(err);
+      //console.error(err.stack);
     });
     let server = app.listen(8080, function() {
       let port = server.address().port;

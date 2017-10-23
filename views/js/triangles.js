@@ -121,3 +121,8 @@ timeline
     },
     offset: 2000 + 10 * paths.length
   });
+
+function gotoDetail() {
+	console.log("Went to Detail");
+	window.location.href = '/test';
+}

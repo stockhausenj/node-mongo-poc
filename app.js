@@ -24,11 +24,18 @@ const mongoUrl = "mongodb://" + user + ":" + pwd + "@" + server + "/video";
 
 app.set("view engine", "pug");
 
+function gotoDetail() {
+	console.log("Went to detail");
+};
+
 mongoClient
   .connect(mongoUrl)
   .then(db => {
     app.get("/", function(req, res) {
       res.render("add_movie", { title: "Add Movie", message: "Hello there!" });
+    });
+    app.get("/test", function(req, res) {
+      res.render("test", { title: "Add Movie", message: "Hello there!" });
     });
     app.post("/add_movie", function(req, res) {
       let title = req.body.title;

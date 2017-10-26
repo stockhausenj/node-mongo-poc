@@ -23,9 +23,10 @@ const server = jsonContent.server;
 const mongoUrl = "mongodb://" + user + ":" + pwd + "@" + server + "/video";
 
 app.set("view engine", "pug");
+app.set("views", path.join(__dirname, '/../client'));
 
 function gotoDetail() {
-	console.log("Went to detail");
+		console.log("Went to detail");
 };
 
 mongoClient

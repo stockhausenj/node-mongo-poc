@@ -1,0 +1,11 @@
+{
+  "name": "node-mongo-poc",
+  "version": "0.0.0",
+  "license": "JAY",
+  "scripts": {},
+  "private": true,
+  "dependencies": {
+    "animejs": "^2.2.0"
+  },
+  "devDependencies": {}
+}

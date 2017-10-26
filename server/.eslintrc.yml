@@ -7,7 +7,6 @@ parser: "esprima"
 parserOptions:
   ecmaVersion: 6
 env:
-  browser: true
   node: true
 rules: 
   import/no-commonjs: "off"

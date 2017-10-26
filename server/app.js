@@ -4,7 +4,6 @@ const express = require("express"),
   fs = require("fs"),
   path = require("path"),
   bodyParser = require("body-parser"),
-  anime = require("animejs"),
   assert = require("assert");
 
 // Create express application.
@@ -23,11 +22,7 @@ const server = jsonContent.server;
 const mongoUrl = "mongodb://" + user + ":" + pwd + "@" + server + "/video";
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, '/../client'));
-
-function gotoDetail() {
-		console.log("Went to detail");
-};
+app.set("views", path.join(__dirname, "/../client"));
 
 mongoClient
   .connect(mongoUrl)
@@ -48,10 +43,6 @@ mongoClient
           assert.equal(null, err);
           res.send("Document inserted with _id: " + r.insertedId);
         });
-    });
-    app.use((err, req, res) => {
-      //console.error(err);
-      //console.error(err.stack);
     });
     let server = app.listen(8080, function() {
       let port = server.address().port;

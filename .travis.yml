@@ -3,6 +3,5 @@ language: node_js
 node_js:
 - node
 before_install:
-- basah ./travis-before_install.sh
-script:
-- bash ./travis-script.sh
+- pushd ./server && npm install && popd
+- pushd ./client/js && npm install && popd

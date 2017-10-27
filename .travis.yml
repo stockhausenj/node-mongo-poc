@@ -7,3 +7,4 @@ before_install:
   - pushd ./client/js && npm install && popd
 script:
   - pushd ./server && ./node_modules/.bin/eslint app.js && popd 
+  - pushd ./client/js && ./node_modules/.bin/browserify sovereign.js > browserify/sovereign-bundle.js && popd

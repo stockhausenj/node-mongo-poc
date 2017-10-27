@@ -1,7 +1,9 @@
 ---
 language: node_js
 node_js:
-- node
+  - node
 before_install:
-- pushd ./server && npm install && popd
-- pushd ./client/js && npm install && popd
+  - pushd ./server && npm install && popd
+  - pushd ./client/js && npm install && popd
+script:
+  - pushd ./server && ./node_modules/.bin/eslint app.js && popd 
